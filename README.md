@@ -58,33 +58,6 @@ Install with:
 pip install torch numpy pandas scikit-learn umap-learn matplotlib
 
 
-Repository Structure
-tcga-multimodal-subtype/
-
-├── README.md
-
-├── preprocessing/
-
-│   └── download_and_preprocess.ipynb   # GDC API download + feature matrix construction
-
-├── model/
-
-│   └── multimodal_autoencoder.ipynb    # Model architecture, training, pan-cancer classification
-
-├── ablation/
-
-│   └── modality_ablation.ipynb         # 63-combination ablation across 5 cancer cohorts
-
-└── results/
-
-    └── figures/                        # All figures used in the paper
-
-
-Reproducing the Results
-Run preprocessing/download_and_preprocess.ipynb to download data from the GDC API and build the six feature matrices. Update the base path at the top of the notebook to match your environment.
-Run model/multimodal_autoencoder.ipynb to train the pan-cancer model and reproduce the 98.2% accuracy result and UMAP figure.
-Run ablation/modality_ablation.ipynb to retrain all 63 modality combinations for each cancer cohort and reproduce the ablation results. Note: full replication requires approximately 1,575 training runs for the KIRC multi-seed cross-validation. An NVIDIA A100 GPU is recommended.
-
 
 Citation
 If you use this code or data, please cite:
